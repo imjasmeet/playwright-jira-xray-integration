@@ -7,29 +7,48 @@
   <properties>
     <maven.compiler.source>19</maven.compiler.source>
     <maven.compiler.target>19</maven.compiler.target>
+    <cucumber.version>7.18.0</cucumber.version>
   </properties>
   <version>1.0-SNAPSHOT</version>
   <name>playwright-jira-xray-integration</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>junit</groupId>-->
+<!--      <artifactId>junit</artifactId>-->
+<!--      <version>4.11</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.microsoft.playwright</groupId>
       <artifactId>playwright</artifactId>
       <version>1.42.0</version>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.testng</groupId>-->
+<!--      <artifactId>testng</artifactId>-->
+<!--      <version>7.10.1</version>-->
+<!--      <scope>build</scope>-->
+<!--    </dependency>-->
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.10.1</version>
+      <groupId>app.getxray</groupId>
+      <artifactId>xray-testng-extensions</artifactId>
+      <version>0.2.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -53,11 +72,9 @@
           <forkCount>3</forkCount>
           <reuseForks>true</reuseForks>
           <argLine>-Xmx1024m -XX:MaxMetaspaceSize=256m</argLine>
-          <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testrunners/testng.xml</suiteXmlFile>
-
-          </suiteXmlFiles>
-
+          <includes>
+            <exclude>**/*CucumberTestRunner.java</exclude>
+          </includes>
 
 
         </configuration>

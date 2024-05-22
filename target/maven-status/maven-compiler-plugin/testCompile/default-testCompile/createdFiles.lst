@@ -1,2 +1,4 @@
-com/jfrog/app/LoginTestClass.class
-com/jfrog/app/BaseTestClass.class
+com/jfrog/app/hooks/Hooks.class
+com/jfrog/app/stepdefs/LoginStepDefinitions.class
+com/jfrog/app/listners/CustomTestListener.class
+com/jfrog/app/runners/CucumberTestRunner.class

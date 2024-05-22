@@ -1,0 +1,7 @@
+rm -f exported_features.zip
+rm -f exported_features/*.feature
+curl --location 'https://xray.cloud.getxray.app/api/v2/export/cucumber?keys=JFCFG-285' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJmZTFkOGQ1NS1mZjc0LTM0NTgtODQyMS05NDIxMDFhNjk3N2MiLCJhY2NvdW50SWQiOiI2MzZiNjg0NmMzODNhZDg0MjE0Njc2ZTAiLCJpc1hlYSI6ZmFsc2UsImlhdCI6MTcxNjM4NDQxNiwiZXhwIjoxNzE2NDcwODE2LCJhdWQiOiIyMjcwNTU0MzczNTc0N0ZGQTgyRTE4QkJFQ0EyRDdCRSIsImlzcyI6ImNvbS54cGFuZGl0LnBsdWdpbnMueHJheSIsInN1YiI6IjIyNzA1NTQzNzM1NzQ3RkZBODJFMThCQkVDQTJEN0JFIn0.Qx7RxG_R_OETVvsJtcPLeSJWxqX1WBWyLnb3m-pOFy0' \
+--output exported_features.zip
+unzip -o exported_features.zip  -d exported_features

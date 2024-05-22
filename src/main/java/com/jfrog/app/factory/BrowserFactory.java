@@ -48,19 +48,18 @@ public class BrowserFactory {
         String browserName = prop.getProperty("browser").trim();
         System.out.println("Executing on browser : " + browserName);
 
-        // playwright = Playwright.create();
         threadLocalPlaywright.set(Playwright.create());
 
         switch (browserName.toLowerCase()) {
 
             case "chrome":
                 threadLoaclBrowser.set(
-                        getPlaywright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false)));
+                        getPlaywright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(Boolean.parseBoolean(prop.getProperty("headless").trim()))));
             case "firefox":
-                threadLoaclBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                threadLoaclBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(Boolean.parseBoolean(prop.getProperty("headless").trim()))));
                 break;
             case "safari":
-                threadLoaclBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                threadLoaclBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(Boolean.parseBoolean(prop.getProperty("headless").trim()))));
                 break;
 
             default:

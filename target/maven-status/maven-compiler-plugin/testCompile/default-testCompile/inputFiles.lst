@@ -1,2 +1,4 @@
-/Users/jasmeets/Work/Infra/Projects/playwright-jira-xray-integration/src/test/java/com/jfrog/app/LoginTestClass.java
-/Users/jasmeets/Work/Infra/Projects/playwright-jira-xray-integration/src/test/java/com/jfrog/app/BaseTestClass.java
+/Users/jasmeets/Work/Infra/Projects/POCs/playwright-jira-xray-integration/src/test/java/com/jfrog/app/listners/CustomTestListener.java
+/Users/jasmeets/Work/Infra/Projects/POCs/playwright-jira-xray-integration/src/test/java/com/jfrog/app/hooks/Hooks.java
+/Users/jasmeets/Work/Infra/Projects/POCs/playwright-jira-xray-integration/src/test/java/com/jfrog/app/runners/CucumberTestRunner.java
+/Users/jasmeets/Work/Infra/Projects/POCs/playwright-jira-xray-integration/src/test/java/com/jfrog/app/stepdefs/LoginStepDefinitions.java
