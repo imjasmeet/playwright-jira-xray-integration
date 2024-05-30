@@ -1,0 +1,8 @@
+resources:
+    - name: jas_xray_bitbucket
+      type: GitRepo
+      configuration:
+        path: imjasmeet/playwright-jira-xray-integration
+        gitProvider: test_jas_xray
+        branches:
+          include: ^master$

@@ -3,11 +3,14 @@ package com.jfrog.app.stepdefs;
 
 import com.jfrog.app.factory.BrowserFactory;
 import com.jfrog.app.pages.LoginPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.jfrog.app.hooks.Hooks;
 import com.jfrog.app.pages.LoginPage;
+import org.testng.Assert;
+
 public class LoginStepDefinitions {
 
     public LoginPage loginPage;
@@ -37,6 +40,11 @@ public class LoginStepDefinitions {
 
     @Then("I should see the welcome message {string}")
     public void i_should_see_the_welcome_message(String welcomeMessage) {
-        System.out.println("I saw successful login message");
+        Assert.assertEquals(welcomeMessage, "Welcome to the LNP");
+    }
+
+    @And("I should see the error message {string}")
+    public void iShouldSeeTheErrorMessage(String errorMesage) {
+        Assert.assertEquals(errorMesage, "Login has failed. Due to Incorrect username/password or locked user");
     }
 }
