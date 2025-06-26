@@ -10,9 +10,9 @@ Feature: Login functionality on a test instance
     And I should see the welcome message "<welcome_message>"
 
     Examples:
-      | username | password   | welcome_message    |
-      | jasmeets | Password@1 | Welcome to the LNP |
-      | admin    | password   | Welcome to the LNP |
+      | username | password   | welcome_message          |
+      | jasmeets | Password@1 | Welcome to the Home page |
+      | admin    | password   | Welcome to the Home page |
 
   @id:2
   Scenario Outline: Test login functionality with invalid credentials on test instance
