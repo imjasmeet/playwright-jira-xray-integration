@@ -2,12 +2,12 @@
 set -e
 
 BASE_URL=https://xray.cloud.getxray.app
-projectKey=JFCFG
+projectKey=XYZ
 
 # Add code to extract Auth token
 token=$(curl --location "$BASE_URL/api/v2/authenticate" \
         --header 'Content-Type: application/json' \
-        --data '{ "client_id": "22705543735747FFA82E18BBECA2D7BE","client_secret": "53786b5f1441fc6de206477140bbff8261882885fa39f73687fa74322d1e0411" }' | tr -d '"') || { echo "Failed to authenticate"; exit 1; }
+        --data '{ "client_id": "122","client_secret": "112" }' | tr -d '"') || { echo "Failed to authenticate"; exit 1; }
 echo $token
 # Remove existing features zip file
 rm -f features.zip || { echo "Failed to remove existing features zip file"; exit 1; }
